@@ -1,0 +1,41 @@
+@(title: String, mas: Html = Html.empty)(content: Html)
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> @title </title>
+    @views.html.layouts.resources()
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.ico")">
+    <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div id="masthead">
+        @layouts.mas(title)(mas)
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div class="error-container">
+                        @content
+                        <div class="error-actions">
+                            <a href="/" class="btn btn-large btn-primary">
+                                <i class="icon-home"></i>
+                                    &nbsp;
+                                    回首页
+                            </a>
+                            <a href="/" class="btn btn-large">
+                                <i class="icon-chevron-left"></i>
+                                    &nbsp;
+                                    返回上一页
+                            </a>
+                        </div> <!-- /error-actions -->
+                    </div> <!-- /.error-container -->
+                </div> <!-- /.span12 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div>
+</body>

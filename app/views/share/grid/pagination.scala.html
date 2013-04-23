@@ -1,0 +1,25 @@
+@(index: Int, count: Int, baseUrl: String)
+
+@if(count > 1) {
+    <div class="pagination">
+        <ul>
+            @if(index == 1) {
+                <li class="disabled"> <a href="#"> 前一页 </a> </li>
+            } else {
+                <li> <a href="@(s"$baseUrl&page_index=${index - 1}")"> 前一页 </a> </li>
+            }
+
+            @for(i <- 1 to count) {
+                <li class="@if(index == i) { active } else {}">
+                    <a href="@(s"$baseUrl&page_index=$i")"> @i </a>
+                </li>
+            }
+
+            @if(index == count) {
+                <li class="disabled"> <a href="#"> 后一页 </a> </li>
+            } else {
+                <li> <a href="@(s"$baseUrl&page_index=${index + 1}")"> 后一页 </a> </li>
+            }
+        </ul>
+    </div>
+}

@@ -1,0 +1,48 @@
+@(active: String = "")
+
+@import views.html.layouts.menu
+@import views.html.layouts.menu_item
+@import views.html.layouts._
+
+<a href="#" class="brand"> DreamNM </a>
+
+<div id="topbar">
+    @layouts.topbar()
+</div>
+
+<div class="nav-collapse">
+    <ul id="main-nav" class="nav pull-left">
+        @menu("", routes.TopologyController.view().url, "icon-home", active == "home")(Html.empty)
+        @menu("运维视图", "#", "icon-th", active == "monitor") {
+            @menu_item("#", "拓扑视图", "")
+            @menu_item("#", "监控总览", "")
+            @menu_item("#", "divider", "")
+            @menu_item("#", "拓扑视图", "")
+        }
+        @menu("告警管理", "#", "icon-bell", active == "alarm") {
+            @menu_item(routes.AlarmRuleController.index().url, "告警规则", "")
+            @menu_item("#", "告警日志", "")
+            @menu_item("#", "divider", "")
+            @menu_item("#", "通知方式", "")
+        }
+        @menu("历史记录", "#", "icon-edit", active == "history") {
+            @menu_item("#", "记录规则", "")
+            @menu_item("#", "统计分析", "")
+        }
+        @menu("资源管理", "#", "icon-retweet", active == "resource") {
+            @menu_item(routes.DeviceController.index().url, "设备管理", "")
+            @menu_item("#", "divider", "")
+            @menu_item("#", "线路管理", "")
+        }
+        @menu("系统管理", "#", "icon-qrcode", active == "system") {
+            @menu_item("#", "用户管理", "")
+            @menu_item("#", "角色管理", "")
+            @menu_item("#", "divider", "")
+            @menu_item("#", "操作审计", "")
+            @menu_item("#", "系统设置", "")
+            @menu_item("#", "divider", "")
+            @menu_item("#", "关于我们", "")
+        }
+    </ul>
+
+</div> <!-- /.nav-collapse -->

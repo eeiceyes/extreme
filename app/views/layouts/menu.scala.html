@@ -1,0 +1,19 @@
+@(label: String, url: String, icon: String, active: Boolean)(items: Html)
+
+<li class="dropdown  @if(active){active}">
+    <a href="@url" class="dropdown-toggle" @if(items.body != "") { data-toggle="dropdown" }>
+        <i class="@icon @if(!active){icon-white}"></i>
+        @if(!label.isEmpty()) {
+            <span> @label </span>
+        }
+        @if(items.body != "") {
+            <b class="caret"></b>
+        }
+    </a>
+
+    @if(items.body != "") {
+        <ul class="dropdown-menu">
+            @items
+        </ul>
+    }
+</li>

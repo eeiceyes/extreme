@@ -1,0 +1,42 @@
+@()(implicit flash: Flash)
+
+@import helpers._
+@import views.html.alarm_rule._
+@import views.html.share.action._
+@import views.html.share.grid._
+
+@mas = {
+    @quick_bar {
+        @quick_actions {
+            @a_action("增加", routes.AlarmRuleController.add().url, "icon-add", "grid-action")
+            @a_action("编辑", "#", "icon-edit", "grid-action", "grid-action", mode="1")
+            @a_action("删除", "#", "icon-delete", "grid-action", method = "DELETE", mode="+", confirm="确认删除选中的规则？")
+            @a_action("启动", "#", "icon-start", "grid-action", mode="+")
+            @a_action("停止", "#", "icon-stop", "grid-action", mode="+")
+        }
+        @quick_actions {
+            @a_action("导出", "#", "icon-output", "grid-action")
+        }
+
+        @quick_actions {
+            @action_form(routes.AlarmRuleController.index().url) {
+                @fields {
+                    @text_field("告警类型", "alarmType")
+                    @text_field("监控点", "alarmStatus")
+                }
+                @fields {
+                    @text_field("告警对象", "alarmType")
+                    @text_field("创建时段", "alarmStatus")
+                }
+                @submit_action("查询", "icon-search", "grid-action")
+            }
+        }
+    }
+}
+
+@main("告警规则管理", "alarm", flash.get("message").getOrElse("")) {
+    @list {
+        @mas
+        @index_table()
+    }
+}

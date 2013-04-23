@@ -1,0 +1,17 @@
+@()
+@import helpers._
+@import views.html.share._
+@import views.html.share.grid._
+
+@GridHelper.setup[AlarmRule]( grid => {
+    grid.table {
+        grid.check_column("id")
+        grid.column("状态", "status")
+        grid.column("告警名称", "name")
+        grid.column("是否系统", "isSystem")
+        grid.column("告警对象", "target")
+        grid.column("级别", "level")
+        grid.column("通知方式", "notificationType")
+        grid.column("创建时间", "createdTime")
+    }
+})

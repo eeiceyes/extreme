@@ -1,0 +1,275 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.overlay-back {
+    background: #d3d3d3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10010;
+    opacity: 0.1;
+}
+
+.overlay-indicator {
+    position: fixed;
+    top: 200px;
+    margin: 0px auto;
+    width: 32px;
+    height: 32px;
+    z-index: 11000;
+}
+
+.layout-content {
+    background-color: #ffffff;
+    position: absolute;
+    top: 95px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;;
+}
+
+.layout-inner {
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.layout-container {
+    padding-left: 0;
+    padding-right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+}
+
+/*#flashContainer {*/
+    /*position: absolute;*/
+    /*z-index: 1000;*/
+    /*width: 100%;*/
+/*}*/
+
+/*#flashContainer .alert-info {*/
+    /*text-align: center;*/
+    /*min-height: 40px;*/
+/*}*/
+
+.alert {
+    margin-bottom: 5px;
+    margin-top: 5px;;
+}
+
+#main-nav > li > a > i {
+    top: 0;
+}
+
+#topbar {
+    position: absolute;
+    left: 170px;
+    right: 10px;
+    top: 0;
+    border-bottom-width: 0;
+    background-color: transparent;
+    height: 30px;
+}
+
+#topbar .pull-right {
+    position: relative;
+    top: 4px;
+    right: 10px;
+}
+
+#topbar .alarm-bar {
+    float: right;
+    position: relative;
+    top: 6px;
+    width: 250px;
+    display:inline-block;
+}
+
+#topbar .info-label {
+    cursor: pointer;
+    height: 8px;
+    width: 7px;
+    border-radius: 40px;
+    font-weight: bold;;
+    line-height: 8px;
+    position: relative;
+    top: -6px;
+    right: 2px;
+    text-align: center;
+    padding: 0 5px;
+    font-size: 11px;
+}
+
+#topbar .icon-bell {
+    cursor: pointer;
+}
+
+.alarm-bar .tiny {
+    background-color: #0daed3;
+}
+
+.alarm-bar .info {
+    background-color: #fb5a32;
+}
+
+.alarm-bar .warn {
+    background-color: #ffb400;
+}
+
+.alarm-bar .error {
+    background-color: #74b749;
+}
+
+.alarm-bar .fatal {
+    background-color: #ff0000;
+}
+
+#header .pull-left {
+
+}
+
+#header {
+    height: 95px;
+
+}
+
+
+#header .brand {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: inline-block;
+    overflow: hidden;
+    width: 150px;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 500;
+    background: url(../images/logo.png) no-repeat 5px center;
+    /*border-right: 1px solid #000000;*/
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#header .nav-collapse {
+    position: absolute;
+    left: 170px;
+    bottom: 0;
+}
+
+#header .container {
+    width: 100%;
+}
+
+#masthead .container {
+    width: 100%;
+}
+
+#masthead {
+    padding: 2px 0;
+    height: 40px;
+}
+
+#masthead .masthead-text {
+    text-indent: 10px;
+}
+
+#masthead .btn-group {
+    margin-top: 5px;
+    margin-right: 20px;;
+    float: right;
+}
+
+#monitor {
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 10px;
+    bottom: 0;;
+}
+
+#footer {
+    padding: 2px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.table tbody tr td {
+    padding-top: 3px;
+    padding-bottom: 2px;
+}
+
+.table thead tr th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table thead th a {
+    color: white;
+    text-decoration: none;
+}
+
+.table thead .check-column {
+    width: 20px;
+}
+
+.table-wrapper .pagination {
+   text-align: right;
+}
+
+.gui-list{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.gui-list .quick-bar {
+    margin-bottom: 5px;
+}
+
+.form-horizontal .control-group {
+    margin-bottom: 3px;
+}
+
+legend + .control-group {
+    margin-top: 3px;
+}
+
+.account-container {
+    margin-top: 0;
+    top: 85px;
+}
+
+#wice_form {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+

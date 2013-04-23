@@ -1,0 +1,40 @@
+.topology {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.fill {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.fill div:first-child {
+    background-image: url("../images/topology/back.jpg");
+}
+
+.topology .toolbar {
+    position: absolute;
+    height:40px;
+    width:100%;
+}
+
+.topology .toolbar .btn-group {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    float: left;
+}
+
+.topology .content {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}

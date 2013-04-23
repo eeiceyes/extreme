@@ -1,0 +1,20 @@
+@()
+@import helpers._
+@import views.html.share._
+@import views.html.share.grid._
+
+@GridHelper.setup[Device](grid => {
+    grid.table {
+        grid.check_column("id")
+        grid.column("IP地址", "ip")
+        grid.column("机器名称", "deviceName")
+        grid.column("设备类型", "deviceType", {implicit record =>
+            DeviceHelper.translateType(record.deviceType)
+        })
+        grid.column("访问方式", "accessType")
+        grid.column("责任人", "owner")
+        grid.column("创建时间", "createdTime")
+        grid.column("设备描述", "deviceDesc")
+        grid.column("厂商", "manufacturer")
+    }
+})

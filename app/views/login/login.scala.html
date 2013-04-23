@@ -1,0 +1,51 @@
+@()(implicit flash: Flash)
+
+@import views.html.layouts
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    @views.html.layouts.resources()
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+</head>
+<body class="login">
+    @if(!flash.get("message").getOrElse("").isEmpty) {
+        @layouts.flash(flash.get("message").getOrElse(""))
+    }
+
+    <div class="account-container login stacked">
+        <div class="content clearfix">
+            <form action="@routes.LoginController.auth()" method="post" class="validation-required">
+                <h1>登录</h1>
+                <div class="login-fields">
+                    <div class="field">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" value="" placeholder="请输入用户名" class="login username-field required">
+                    </div> <!-- /field -->
+                    <div class="field">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" value="" placeholder="请输入密码" class="login password-field required">
+                    </div> <!-- /password -->
+                </div> <!-- /login-fields -->
+
+                <div class="login-actions">
+
+                    <span class="login-checkbox">
+                        <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">
+                        <label class="choice" for="Field"></label>
+                    </span>
+
+                    <button class="button btn btn-primary btn-large">登录</button>
+
+                </div> <!-- .actions -->
+            </form>
+        </div> <!-- /content -->
+    </div> <!-- /account-container -->
+
+
+
+</body>

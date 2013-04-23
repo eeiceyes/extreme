@@ -1,0 +1,8 @@
+@(label: String,  ico:String="",  cls: String="", method: String="", mode:String="*")
+
+<li>
+<a href="#" onclick="$(this).closest('form').submit();" class="@cls" method="@method" mode="@mode">
+    <i class="@ico"></i>
+    @label
+</a>
+</li>

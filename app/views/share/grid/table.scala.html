@@ -1,0 +1,13 @@
+@(columns: Html)(body: Html)(pagination: Html)
+
+<div class="table-wrapper">
+<table class="table table-bordered table-striped table-highlight">
+    <thead>
+            @columns
+        </thead>
+    <tbody>
+        @body
+    </tbody>
+</table>
+    @pagination
+</div>

@@ -1,0 +1,43 @@
+
+@(title: String, active:String = "", flashMessage: String = "",mas: Html = Html.empty)(content: Html)
+
+@import views.html.layouts
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> @title </title>
+    @views.html.layouts.resources()
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.ico")">
+    <script src="@routes.Assets.at("javascripts/main.js")" type="text/javascript"></script>
+</head>
+<body>
+    @layouts.ajax_overlay()
+    <div class="container-fluid layout-container">
+        @*<div id="topbar">*@
+            @*@layouts.topbar()*@
+        @*</div>*@
+        <header id="header">
+            @layouts.header(active)
+        </header>
+        @*<div id="masthead">*@
+            @*@layouts.mas(title)(mas)*@
+        @*</div>*@
+        <div class="layout-content">
+            <div class="layout-inner">
+                @if(!flashMessage.isEmpty) {
+                    @layouts.flash(flashMessage)
+                }
+                @content
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        @layouts.footer()
+    </footer>
+</body>
+</html>

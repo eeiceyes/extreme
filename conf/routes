@@ -1,0 +1,30 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /topology                   controllers.TopologyController.view
+GET     /monitor                    controllers.MonitorManage.index
+
+#device
+GET     /devices                    controllers.DeviceController.index
+GET     /devices/add                controllers.DeviceController.add
+GET     /devices/:id/edit           controllers.DeviceController.edit(id: String)
+POST    /devices                    controllers.DeviceController.create
+PUT     /devices/:id                controllers.DeviceController.update(id: String)
+DELETE  /devices/:id                controllers.DeviceController.delete(id: String)
+POST    /devices/:id/reload         controllers.DeviceController.reload(id: String)
+
+#alarm rule
+GET     /alarm_rules                controllers.AlarmRuleController.index
+GET     /alarm_rules/add            controllers.AlarmRuleController.add
+POST    /alarm_rules                controllers.AlarmRuleController.create
+
+
+#default
+GET     /                           controllers.TopologyController.view
+GET     /login                      controllers.LoginController.login
+POST    /login                      controllers.LoginController.auth
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

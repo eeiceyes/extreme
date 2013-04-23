@@ -1,0 +1,26 @@
+@()(implicit flash: Flash)
+@import helpers._
+@import views.html.device._
+@import views.html.share.action._
+@import views.html.share.grid._
+
+@mas = {
+    @quick_bar {
+        @quick_actions {
+            @a_action("增加", routes.DeviceController.add().url, "icon-add", "grid-action")
+            @a_action("删除", routes.DeviceController.delete("keys").url, "icon-delete", "grid-action", method = "DELETE", mode="+")
+            @a_action("编辑", routes.DeviceController.edit("keys").url, "icon-edit", "grid-action", mode="1")
+        }
+        @quick_actions {
+            @a_action("重置", routes.DeviceController.reload("keys").url, "icon-reload", "grid-action", mode="+")
+        }
+    }
+}
+
+@main("设备列表", "resource", flash.get("message").getOrElse("")) {
+    @list {
+        @mas
+        @index_table()
+    }
+}
+

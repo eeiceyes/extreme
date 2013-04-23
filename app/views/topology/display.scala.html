@@ -1,0 +1,44 @@
+@(topologyId: Int)
+
+@main("拓扑显示", "home") {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/topology.css")">
+    <script src="@routes.Assets.at("javascripts/topology.js")" type="text/javascript"></script>
+    <div class="topology">
+        <div class="toolbar">
+            <div class="btn-group">
+                <a class="btn btn-small action" data-toggle="button" action="pan" >
+                    <i class="icon-hand-up"  ></i>
+                </a>
+                <a class="btn btn-small action" action="zoom_in" >
+                    <i class="icon-zoom-in" ></i>
+                </a>
+                <a class="btn btn-small action" action="zoom_out">
+                    <i class="icon-zoom-out" ></i>
+                </a>
+                <a class="btn btn-small action" action="zoom_reset">
+                    <i class="icon-screenshot" ></i>
+                </a>
+                <a class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-th" ></i>
+                    <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="action" action="layout_round">round</a></li>
+                        <li><a href="#" class="action" action="layout_symmetry">symmetry</a></li>
+                        <li><a href="#" class="action" action="layout_hierarchic">hierarchic</a></li>
+                    </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-small action" action="pan" >
+                    <i class="icon-search"  ></i>
+                </a>
+                <a class="btn btn-small action" action="pan" >
+                    <i class="icon-filter"  ></i>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+
+        </div>
+    </div>
+}

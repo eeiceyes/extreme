@@ -1,0 +1,20 @@
+@(title: String = "")(content: Html = Html.empty)
+
+<div class="masthead-pad">
+    <div class="masthead-text">
+        @if(title.isEmpty) {
+            @content
+        } else {
+            <h3> @title </h3>
+        }
+    </div>
+    <div class="btn-group">
+        <a class="btn btn-small btn-tertiary action" action="full_screen">
+            <i class="icon-fullscreen" ></i>
+        </a>
+    </div>
+</div>
+
+
+
+

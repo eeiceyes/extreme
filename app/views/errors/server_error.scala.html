@@ -1,0 +1,9 @@
+@(ex: Throwable)
+
+@main_simplify("内部错误") {
+    <h1> 操作失败! </h1>
+    <h2> 500 服务端错误 </h2>
+    <div class="error-details">
+            @ex.getMessage
+    </div> <!-- /error-details -->
+}

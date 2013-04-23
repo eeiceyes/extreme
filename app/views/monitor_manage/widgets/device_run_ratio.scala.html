@@ -1,0 +1,50 @@
+@(container: String)
+
+<script language="javascript">
+    $(function () {
+        $('#@container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '运行率统计'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage}% </b> ',
+                percentageDecimals: 1
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return ' <b> '+ this.point.name +' </b> : '+ this.percentage +' %';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    {
+                        name: '低运行率',
+                        y: 2,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['中运行率',    17.5],
+                    ['高运行率',     80.5]
+                ]
+            }]
+        });
+    });
+</script>
+
+
