@@ -4,9 +4,14 @@
 @import views.html.share._
 
 @main("添加规则", "alarm") {
-    @FormHelper.setup[Device] { form =>
-        @form.map(routes.AlarmRuleController.create.url){
+    @widget("添加规则", "cus-bell") {
+        @block("对象类型") {
+            asdaasd
+        }
+        @FormHelper.setup[Device] { form =>
+            @form.map(routes.AlarmRuleController.create.url){
 
+            }
         }
     }
 }
