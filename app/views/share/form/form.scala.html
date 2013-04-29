@@ -1,5 +1,5 @@
-@(action:String= "", method:String= "POST")(content: Html)
+@(action:String= "", method:String= "POST", cls:String="")(content: Html)
 
-<form class="form-horizontal validation-required" action="@action" method="@method">
+<form class="form-horizontal validation-required @cls" action="@action" method="@method">
     @content
 </form>

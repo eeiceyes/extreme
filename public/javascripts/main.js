@@ -14,6 +14,8 @@
 
         $(".gui-list").grid();
 
+        $(".chosen").chosen();
+
         window.setTimeout(function(){
             $("#flashContainer").slideUp({duration:1000});
         }, 3000)

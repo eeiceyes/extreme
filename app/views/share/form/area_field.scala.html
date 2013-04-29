@@ -1,0 +1,16 @@
+@(args: Map[Symbol, String])
+
+@label = @{ args.get('label).getOrElse("") }
+@cls = @{ args.get('cls).getOrElse("") }
+@path = @{ args.get('path).getOrElse("") }
+@attributes = @{ args.get('attributes).getOrElse("") }
+@value = @{ args.get('value).getOrElse("") }
+
+<div class="control-group">
+    <label class="control-label" > @label </label>
+    <div class="controls" style="">
+        <textarea @attributes class="input-large  @cls" name="@path" id="@path">
+            @value
+        </textarea>
+    </div>
+</div>

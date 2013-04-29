@@ -1,0 +1,23 @@
+@(args: Map[Symbol, Any])
+
+@label = @{ args.get('label).getOrElse("") }
+@cls = @{ args.get('cls).getOrElse("") }
+@path = @{ args.get('path).getOrElse("") }
+@attributes = @{ args.get('attributes).getOrElse("") }
+@value = @{ args.get('value).getOrElse("") }
+@source = @{ args.get('source).getOrElse(Map()) }
+
+<div class="control-group">
+    <label class="control-label" > @label </label>
+    <div class="controls" style="">
+        <select class="chosen @cls" name="@path" id="@path" value="@value" @{attributes} >
+            @source.asInstanceOf[Map[String, String]].map{  tu =>
+                @if(value.toString.split(",").contains("" + tu._1)) {
+                    <option selected="selected" value="@tu._1">@tu._2</option>
+                } else {
+                    <option value="@tu._1">@tu._2</option>
+                }
+            }
+        </select>
+    </div>
+</div>

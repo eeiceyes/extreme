@@ -9,8 +9,20 @@ class Form {
     form.text_field(args.toMap)
   }
 
-  def map(action:String, method:String="POST")(content: Html)= {
-    form.form(action, method){
+  def check_field(args: (Symbol, String)*) = {
+    form.check_field(args.toMap)
+  }
+
+  def area_field(args: (Symbol, String)*) = {
+    form.area_field(args.toMap)
+  }
+
+  def select_field(args: (Symbol, Any)*) = {
+    form.select_field(args.toMap)
+  }
+
+  def map(action:String, method:String="POST", cls:String = "")(content: Html)= {
+    form.form(action, method, cls){
       content
     }
   }

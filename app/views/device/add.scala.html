@@ -4,9 +4,9 @@
 @import views.html.share._
 
 @main("添加设备", "resource") {
-    @widget("添加设备", "cus-inbox") {
-        @FormHelper.setup[Device] { form =>
-            @form.map(routes.DeviceController.create.url){
+    @FormHelper.setup[Device] { form =>
+        @form.map(routes.DeviceController.create.url){
+            @widget("添加设备", "cus-inbox") {
                 @form.fields("基本属性") {
                     @form.text_field('path -> "ip", 'label -> "IP地址", 'cls -> "required");
                     @form.text_field('path -> "deviceName", 'label -> "设备名称", 'cls -> "required");
@@ -16,10 +16,9 @@
                     @form.text_field('path -> "snmp.port", 'label -> "端口", 'cls -> "required");
                     @form.text_field('path -> "snmp.read", 'label -> "读共同体名", 'cls -> "required");
                 }
-                @form.actions {
-                    @b_btn("确定", "cus-accept")
-                    @b_btn("取消", "cus-cancel")
-                }
+            } {
+                @b_btn("确定", "cus-accept")
+                @b_btn("取消", "cus-cancel")
             }
         }
     }
