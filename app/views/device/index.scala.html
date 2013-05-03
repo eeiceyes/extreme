@@ -8,11 +8,24 @@
     @quick_bar {
         @quick_actions {
             @a_action("增加", routes.DeviceController.add().url, "icon-add", "grid-action")
-            @a_action("删除", routes.DeviceController.delete("keys").url, "icon-delete", "grid-action", method = "DELETE", mode="+")
+            @a_action("删除", routes.DeviceController.delete("keys").url, "icon-delete", "grid-action", method = "DELETE", mode="+", confirm="确认删除选中的设备？")
             @a_action("编辑", routes.DeviceController.edit("keys").url, "icon-edit", "grid-action", mode="1")
         }
         @quick_actions {
             @a_action("重置", routes.DeviceController.reload("keys").url, "icon-reload", "grid-action", mode="+")
+        }
+
+        @quick_actions {
+            @action_form(routes.DeviceController.index().url) {
+                @fields {
+                    @text_field("IP地址", "ip")
+                    @text_field("机器名称", "name")
+                }
+                @fields {
+                    @text_field("自定义名", "zhName")
+                }
+                @submit_action("查询", "icon-search", "grid-action")
+            }
         }
     }
 }

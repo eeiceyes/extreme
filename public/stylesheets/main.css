@@ -3,37 +3,6 @@ body {
     height: 100%;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    text-align: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10000;
-}
-
-.overlay-back {
-    background: #d3d3d3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10010;
-    opacity: 0.1;
-}
-
-.overlay-indicator {
-    position: fixed;
-    top: 200px;
-    margin: 0 auto;
-    width: 32px;
-    height: 32px;
-    z-index: 11000;
-}
-
 .layout-content {
     background-color: #ffffff;
     position: absolute;
@@ -107,14 +76,14 @@ form > .widget .widget-content {
 }
 
 /*#flashContainer {*/
-    /*position: absolute;*/
-    /*z-index: 1000;*/
-    /*width: 100%;*/
+/*position: absolute;*/
+/*z-index: 1000;*/
+/*width: 100%;*/
 /*}*/
 
 /*#flashContainer .alert-info {*/
-    /*text-align: center;*/
-    /*min-height: 40px;*/
+/*text-align: center;*/
+/*min-height: 40px;*/
 /*}*/
 
 .alert {
@@ -147,7 +116,7 @@ form > .widget .widget-content {
     position: relative;
     top: 6px;
     width: 250px;
-    display:inline-block;
+    display: inline-block;
 }
 
 #topbar .info-label {
@@ -197,7 +166,6 @@ form > .widget .widget-content {
     height: 95px;
 
 }
-
 
 #header .brand {
     position: absolute;
@@ -281,10 +249,10 @@ form > .widget .widget-content {
 }
 
 .table-wrapper .pagination {
-   text-align: right;
+    text-align: right;
 }
 
-.gui-list{
+.gui-list {
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -379,8 +347,8 @@ ol.tree li label {
 }
 
 /*form div.chzn-search {*/
-    /*padding: 0;*/
-    /*height: 0;*/
+/*padding: 0;*/
+/*height: 0;*/
 /*}*/
 
 .controls select {
@@ -388,16 +356,59 @@ ol.tree li label {
 }
 
 /*.chzn-container-single .chzn-search {*/
-    /*padding: 0;*/
+/*padding: 0;*/
 /*}*/
 
 /*.chzn-container-single .chzn-search input {*/
-    /*padding: 0;*/
-    /*border-width: 0;*/
+/*padding: 0;*/
+/*border-width: 0;*/
 /*}*/
 /*form div.chzn-search input {*/
-    /*height: 1px;*/
-    /*width: 1px;*/
+/*height: 1px;*/
+/*width: 1px;*/
 /*}*/
 
+.notifications {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
 
+.notifications i {
+    background-repeat: no-repeat;
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.notifications li {
+    padding: 5px 15px;
+    float: left;
+    list-style: none;
+}
+
+.notifications .default {
+    background-image: url(../images/alarm/tablet_text_warning.png);
+}
+
+.notifications .email {
+    background-image: url(../images/alarm/mail_warning.png);
+}
+
+.notifications .message {
+    background-image: url(../images/alarm/comments_warning.png);
+}
+
+div.growlUI {
+    background: url(../images/check.png) no-repeat 10px 10px
+}
+
+div.growlUI h1, div.growlUI h2 {
+    color: white;
+    padding: 5px 5px 5px 75px;
+    text-align: left
+}
+
+.tab-content {
+    overflow: inherit;
+}

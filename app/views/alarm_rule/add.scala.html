@@ -1,8 +1,10 @@
 @()
 
 @import helpers._
+@import helpers.AlarmHelper._
 @import helpers.LayoutHelper._
 @import views.html.share._
+@import views.html.alarm_rule._
 @import views.html.layouts
 
 @main("添加规则", "alarm") {
@@ -27,14 +29,14 @@
                                     @wrap("row-fluid") {
                                         @wrap("span6") {
                                             @form.text_field('path -> "name", 'label -> "告警名称", 'cls -> "required")
-                                            @form.select_field('path -> "level", 'label -> "告警级别", 'cls -> "required", 'source -> AlarmHelper.ruleLevel)
-                                            @form.select_field('path -> "delay", 'label -> "延迟次数", 'cls -> "required",  'source -> AlarmHelper.ruleDelay)
+                                            @form.select_field('path -> "level", 'label -> "告警级别", 'cls -> "required", 'source -> ruleLevel)
+                                            @form.select_field('path -> "delay", 'label -> "延迟次数", 'cls -> "required",  'source -> ruleDelay)
                                             @form.area_field('path -> "memo", 'label -> "备注")
                                         }
                                         @wrap("span6") {
                                             @form.check_field('path -> "enabled", 'label -> "启用", 'value -> "checked")
-                                            @form.select_field('path -> "interval", 'label -> "轮询间隔", 'cls -> "required", 'source -> AlarmHelper.pollInterval)
-                                            @form.select_field('path -> "period", 'label -> "通知时段", 'cls -> "required", 'attributes -> "multiple='multiple'", 'value-> "1,2,3,4,5,6,7", 'source -> AlarmHelper.validPeriod)
+                                            @form.select_field('path -> "interval", 'label -> "轮询间隔", 'cls -> "required", 'source -> pollInterval)
+                                            @form.select_field('path -> "period", 'label -> "通知时段", 'cls -> "required", 'attributes -> "multiple='multiple'", 'value-> "1,2,3,4,5,6,7", 'source -> validPeriod)
 
                                         }
                                     }
@@ -42,10 +44,12 @@
                             }
                             @wrap("row wrap-bottom-space") {
                                 @block("参数设置") {
+                                    @biz.parameter_braowse()
                                 }
                             }
                             @wrap("row wrap-bottom-space") {
                                 @block("通知方式") {
+                                    @notifications()
                                 }
                             }
                             @wrap("row wrap-bottom-space") {

@@ -1,0 +1,16 @@
+@(accesses: List[models.ui.TabItem], active:String)
+
+<ul class="nav nav-tabs">
+    @accesses.map{ item =>
+        <li class="@if(active == item.id){active}">
+            <a href="#@{item.id}" data-toggle="tab" > @{item.name} </a>
+        </li>
+    }
+</ul>
+
+<div id="myTabContent" class="tab-content">
+    @accesses.map{ item =>
+        <div class="tab-pane fade @if(active == item.id){ active in} lazy-load" id="home" remote-url="@{item.url}">
+        </div>
+    }
+</div>

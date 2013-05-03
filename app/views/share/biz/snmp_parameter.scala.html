@@ -1,0 +1,14 @@
+@()
+
+@import helpers.LayoutHelper._
+@import helpers.AccessHelper._
+@import views.html.share.form
+
+
+@wrap("row-fluid") {
+    @wrap("span12") {
+        @form.select_field(Map('label -> "SNMP版本", 'source -> snmpVersions))
+        @form.text_field(Map('label -> "SNMP读参数", 'value -> "public"))
+        @form.text_field(Map('label -> "SNMP写参数"))
+    }
+}

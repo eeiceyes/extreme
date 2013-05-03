@@ -1,24 +1,49 @@
 @()(implicit flash: Flash)
 
 @import helpers._
+@import helpers.LayoutHelper._
+@import models.ui._
 @import views.html.share._
 
 @main("添加设备", "resource") {
     @FormHelper.setup[Device] { form =>
-        @form.map(routes.DeviceController.create.url){
+        @form.map(routes.DeviceController.create.url, cls="form-compact"){
             @widget("添加设备", "cus-inbox") {
-                @form.fields("基本属性") {
-                    @form.text_field('path -> "ip", 'label -> "IP地址", 'cls -> "required");
-                    @form.text_field('path -> "deviceName", 'label -> "设备名称", 'cls -> "required");
-                }
+                @wrap("container-fluid") {
+                    @wrap("row-fluid"){
+                        @wrap("span4") {
+                            @block("对象类型") {
+                                @biz.mo_tree()
+                            }
+                        }
+                        @wrap("span8") {
+                            @wrap("row wrap-bottom-space") {
+                                @block("基本属性") {
+                                    @wrap("row-fluid") {
+                                        @wrap("span6") {
+                                            @form.text_field('path -> "ip", 'label -> "IP地址", 'cls -> "required span11")
+                                            @form.text_field('path -> "zhName", 'label -> "自定义名", 'cls -> "required span11")
+                                            @form.text_field('path -> "name", 'label -> "机器名", 'cls -> "required span11")
+                                        }
+                                        @wrap("span6") {
+                                            @form.text_field('path -> "owner", 'label -> "责任人", 'cls -> "required span11")
+                                            @form.area_field('path -> "memo", 'label -> "备注", 'cls -> "span11")
+                                        }
+                                    }
+                                }
+                            }
 
-                @form.fields("访问参数") {
-                    @form.text_field('path -> "snmp.port", 'label -> "端口", 'cls -> "required");
-                    @form.text_field('path -> "snmp.read", 'label -> "读共同体名", 'cls -> "required");
+                            @wrap("row wrap-bottom-space") {
+                                @block("参数采集方式") {
+                                    @biz.accesses(List(new TabItem("snmp", "SNMP参数", routes.AccessParameterController.get("snmp").url)), "snmp")
+                                }
+                            }
+                        }
+                    }
                 }
             } {
-                @b_btn("确定", "cus-accept")
-                @b_btn("取消", "cus-cancel")
+                @b_btn("确定", "cus-accept", "btn-primary btn-large")
+                @b_btn("取消", "cus-cancel", "btn-large")
             }
         }
     }

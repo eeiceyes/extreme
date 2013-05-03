@@ -1,11 +1,11 @@
 (function ($) {
     $(function(){
         $(document).ajaxSend(function(){
-            $(".overlay").css("display", "block");
+            $.blockUI({message: "加载中。。。"});
         });
 
         $(document).ajaxComplete(function(){
-            $(".overlay").css("display", "none");
+            $.unblockUI();
         });
 
         $("a[action='full_screen']").click(function(){
@@ -16,9 +16,19 @@
 
         $(".chosen").chosen();
 
+        $(".tree-table").treetable({ expandable: true });
+
+        $(".lazy-load").each(function(){
+            var self = $(this)
+            self.load(self.attr("remote-url"), function() {
+                self.find(".chosen").chosen();
+            });
+        });
+
         window.setTimeout(function(){
             $("#flashContainer").slideUp({duration:1000});
-        }, 3000)
+//            $.growlUI('Growl Notification', 'Have a nice day!');
+        }, 3000);
 
         var custom = {
             focusCleanup: false,

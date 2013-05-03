@@ -1,9 +1,14 @@
-@(title:String="", ico:String="", cls:String="")(content:Html)(actions:Html)
+@(title:String="", ico:String="", cls:String="", shortcuts:Html = Html.empty)(content:Html)(actions:Html)
 
 <div class="widget stacked @cls">
     <div class="widget-header">
         <i class="@ico"></i>
         <h3>@title</h3>
+        <div class="btn-group">
+            <a class="btn btn-small" action="full_screen">
+                <i class="icon-fullscreen" ></i>
+            </a>
+        </div>
     </div>
     <div class="widget-content">
         @content
